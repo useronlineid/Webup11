@@ -191,7 +191,7 @@ function updateDisplay() {
             bankText = 'พร้อมเพย์';
             bankLogoUrl = '../assets/image/logo/P-Krungthai1.png'; // Logo สำหรับพร้อมเพย์
             break;
-        case 'พร้อมเพย์ ':
+        case 'พร้อมเพย์วอลเล็ท':
             bankText = 'พร้อมเพย์';
             bankLogoUrl = '../assets/image/logo/P-Krungthai.png'; // Logo สำหรับพร้อมเพย์วอลเล็ท
             break;
