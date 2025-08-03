@@ -248,8 +248,8 @@ function updateDisplay() {
             } else if (bank === 'MetaAds') {
                 drawText(ctx, `META ADS (KGP)`, 224.1, 691.3, 24.3, 'SukhumvitSetExtraBold', '#101011', 'left', 34, 3, 0, 0, 800, 0);
                 drawText(ctx, `Biller ID:${receivername}`, 224.1, 719, 20, 'SukhumvitSetMedium', '#9d9da5', 'left', 1.5, 3, 0, 0, 800, 0);
-                drawText(ctx, `${receiveraccount}`, 224.1, 785, 23.5, 'SukhumvitSetSemiBold', '#101011', 'left', 1.5, 1, 0, 0, 500, 0);
-                drawText(ctx, `${receiveraccount}`, 224.1, 845, 23.5, 'SukhumvitSetSemiBold', '#101011', 'left', 1.5, 1, 0, 0, 500, 0);
+                drawText(ctx, `${receiveraccount}`, 224.1, 785, 23.5, 'BangkokTime2', '#101011', 'left', 1.5, 1, 0, 0, 500, 0);
+                drawText(ctx, `${receiveraccount}`, 224.1, 845, 23.5, 'BangkokTime2', '#101011', 'left', 1.5, 1, 0, 0, 500, 0);
 
                 drawText(ctx, `${generateRandomNumber()}`, 47.2, 1107, 20.63, 'BangkokTime2', '#101011', 'left', 1.5, 3, 0, 0, 500, -1);
                 drawText(ctx, `${generateUniqueID()}`, 47.2, 1173, 20.63, 'BangkokTime2', '#101011', 'left', 1.5, 3, 0, 0, 500, -1);
