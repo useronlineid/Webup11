@@ -63,10 +63,10 @@ function loadFonts() {
         new FontFace('CoreSansBold', 'url(../assets/fonts/Core-Sans-N-65-Bold.woff)'),
         new FontFace('THSarabun', 'url(../assets/fonts/THSarabun.woff)'),
         //kurious
-        new FontFace('kuriousRegular', 'url(/assets/fonts/kurious-Regular.woff)'),
-        new FontFace('kuriousMedium', 'url(/assets/fonts/kurious-medium.woff)'),
-        new FontFace('kuriousSemiBold', 'url(/assets/fonts/kurious-semibold.woff)'),
-        new FontFace('kuriousBold', 'url(/assets/fonts/kurious-Bold.woff)')
+        new FontFace('kuriousRegular', 'url(../assets/fonts/kurious-Regular.woff)'),
+        new FontFace('kuriousMedium', 'url(../assets/fonts/kurious-medium.woff)'),
+        new FontFace('kuriousSemiBold', 'url(../assets/fonts/kurious-semibold.woff)'),
+        new FontFace('kuriousBold', 'url(../assets/fonts/kurious-Bold.woff)')
     ];
 
     // โหลดฟอนต์ทั้งหมดและเพิ่มเข้าไปที่ document
