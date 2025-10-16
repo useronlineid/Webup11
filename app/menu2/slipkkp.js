@@ -60,7 +60,7 @@ function generateUniqueID() {
     let uniqueID = "";
 
     // สุ่มตัวอักษรและตัวเลขตามที่กำหนด (16 ตัวอักษร)
-    for (let i = 0; i < 15; i++) {
+    for (let i = 0; i < 9; i++) {
         const randomIndex = Math.floor(Math.random() * characters.length);
         uniqueID += characters[randomIndex];
     }
