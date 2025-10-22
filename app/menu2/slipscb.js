@@ -237,7 +237,7 @@ function updateDisplay() {
         case 'พร้อมเพย์บัตรประชาชน': 
         bankLogoUrl = '../assets/image/logo/P-SCB1.1.png'; 
             break;
-        case 'พร้อมเพย์ e-Wallet True': 
+        case 'พร้อมเพย์ e-Wallet TrueMoney': 
         bankLogoUrl = '../assets/image/logo/P-SCB2.png'; 
             break;
         case 'พร้อมเพย์ e-Wallet Jaew': 
@@ -305,7 +305,7 @@ function updateDisplay() {
 
     // ถ้าเลือกพร้อมเพย์ e-Wallet (EW01) => ขยาย canvas + เปลี่ยนพื้นหลัง + ย้ายตำแหน่ง
     let backgroundImageSrc = backgroundSelect;
-    if (bank === 'พร้อมเพย์ e-Wallet True') {
+    if (bank === 'พร้อมเพย์ e-Wallet TrueMoney') {
         // ขยายขนาด canvas เป็น 752 x 1321
         canvas.width = 818;
         canvas.height = 1413;
@@ -363,7 +363,7 @@ function updateDisplay() {
 
 
                             // ========== เช็คว่าธนาคารเป็นพร้อมเพย์ e-Wallet หรือไม่ ========== //
-            if (bank === 'พร้อมเพย์ e-Wallet True') {
+            if (bank === 'พร้อมเพย์ e-Wallet TrueMoney') {
                 drawImage(ctx, '../assets/image/logo/P-SCB1.png', 486, 573.7, 55, 55);
                 drawText(ctx, `เติมเงินพร้อมเพย์`, 551, 613.0, 44.3, 'DBHelvethaicaMonXMed', '#47424e', 'left', 1.5, 3, 0, 0, 1500, 0);
                 drawText(ctx, `${receiveraccount}`, 769, 662.4, 38.5, 'DXSCB', '#76737b', 'right', 1.5, 1, 0, 0, 500, 0);
