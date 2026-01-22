@@ -231,19 +231,10 @@ function updateDisplay() {
         case 'ไอซีบีซี':
             bankLogoUrl = '../assets/image/logo/A-ICBC.png';
             break;
-        case 'พร้อมเพย์เบอร์': 
+        case 'พร้อมเพย์': 
         bankLogoUrl = '../assets/image/logo/P-SCB.png'; 
             break;
-        case 'พร้อมเพย์บัตรประชาชน': 
-        bankLogoUrl = '../assets/image/logo/P-SCB1.1.png'; 
-            break;
-        case 'พร้อมเพย์ e-Wallet TrueMoney': 
-        bankLogoUrl = '../assets/image/logo/P-SCB2.png'; 
-            break;
-        case 'พร้อมเพย์ e-Wallet Jaew': 
-        bankLogoUrl = '../assets/image/logo/P-SCB2.png'; 
-            break;
-        case 'พร้อมเพย์ e-Wallet K Plus W': 
+        case 'พร้อมเพย์ e-Wallet': 
         bankLogoUrl = '../assets/image/logo/P-SCB2.png'; 
             break;
         case 'MetaAds': 
@@ -306,36 +297,38 @@ function updateDisplay() {
     const receiverNameX = bankLogoX + bankLogoWidth + receiverSpacing;
 
 
-    // ถ้าเลือกพร้อมเพย์ e-Wallet (EW01) => ขยาย canvas + เปลี่ยนพื้นหลัง + ย้ายตำแหน่ง
-    let backgroundImageSrc = backgroundSelect;
-    if (bank === 'พร้อมเพย์ e-Wallet TrueMoney') {
-        // ขยายขนาด canvas เป็น 752 x 1321
+// ================== ส่วนแก้ไขใหม่ เริ่มต้น ==================
+    
+    let backgroundImageSrc = backgroundSelect; // ค่าเริ่มต้น (SCB...)
+
+    // ตรวจสอบ Bank เพื่อเปลี่ยน Canvas Size และ ชื่อไฟล์พื้นหลัง
+    if (bank === 'พร้อมเพย์ e-Wallet') {
+        // ขยายขนาด canvas
         canvas.width = 818;
         canvas.height = 1413;
-        // พื้นหลังเฉพาะ e-Wallet
-        backgroundImageSrc = '../assets/image/bs/SCBB1.jpg';
-    } else if (bank === 'พร้อมเพย์ e-Wallet Jaew') {
-        // ขยายขนาด canvas เป็น 752 x 1321
-        canvas.width = 818;
-        canvas.height = 1413;
-        // พื้นหลังเฉพาะ e-Wallet
-        backgroundImageSrc = '../assets/image/bs/SCBB1.jpg';
-    } else if (bank === 'พร้อมเพย์ e-Wallet K Plus W') {
-        // ขยายขนาด canvas เป็น 752 x 1321
-        canvas.width = 818;
-        canvas.height = 1413;
-        // พื้นหลังเฉพาะ e-Wallet
-        backgroundImageSrc = '../assets/image/bs/SCBB1.jpg';
+        
+        // เทคนิค: แทนที่คำว่า "/SCB" ในชื่อไฟล์ด้วย "/SCBB"
+        // เช่น ../assets/image/bs/SCB1.1.jpg จะกลายเป็น ../assets/image/bs/SCBB1.1.jpg
+        backgroundImageSrc = backgroundSelect.replace('/SCB', '/SCBB'); 
+
     } else if (bank === 'MetaAds') {
+        // ขนาด canvas ของ MetaAds
         canvas.width = 818;
         canvas.height = 1356;
-        backgroundImageSrc = '../assets/image/bs/SSCB1.jpg'; // ภาพเฉพาะของ MetaAds
+
+        // เทคนิค: แทนที่คำว่า "/SCB" ในชื่อไฟล์ด้วย "/SSCB"
+        // เช่น ../assets/image/bs/SCB1.4.jpg จะกลายเป็น ../assets/image/bs/SSCB1.4.jpg
+        backgroundImageSrc = backgroundSelect.replace('/SCB', '/SSCB'); 
+
     } else {
         // ธนาคารอื่น => canvas ปกติ
         canvas.width = 818;
         canvas.height = 1280;
+        // ใช้รูปตามที่เลือกใน Dropdown เลย (ตระกูล SCB)
         backgroundImageSrc = backgroundSelect; 
     }
+
+    // ================== ส่วนแก้ไขใหม่ สิ้นสุด ==================
 
     // โหลดภาพพื้นหลัง
     const backgroundImage = new Image();
@@ -372,35 +365,11 @@ function updateDisplay() {
 
 
                             // ========== เช็คว่าธนาคารเป็นพร้อมเพย์ e-Wallet หรือไม่ ========== //
-            if (bank === 'พร้อมเพย์ e-Wallet TrueMoney') {
+            if (bank === 'พร้อมเพย์ e-Wallet') {
                 drawImage(ctx, '../assets/image/logo/P-SCB1.png', 486, 573.7, 55, 55);
                 drawText(ctx, `เติมเงินพร้อมเพย์`, 551, 613.0, 44.3, 'DBHelvethaicaMonXMed', '#47424e', 'left', 1.5, 3, 0, 0, 1500, 0);
                 drawText(ctx, `${receiveraccount}`, 769, 662.4, 38.5, 'DXSCB', '#76737b', 'right', 1.5, 1, 0, 0, 500, 0);
                 drawText(ctx, `${receivername} (TrueMoney)`, 47, 924.5, 35.5, 'DXSCB', '#76737b', 'left', 1.5, 3, 0, 0, 800, 0);
-                ctx.drawImage(bankLogo, bankLogoX, 573.7, bankLogoWidth, 55);
-                // วาดจำนวนเงิน
-                drawText(ctx, `${amount11}`, 769, 791.0, 44.3, 'DBHelvethaicaMonXMed', '#47424e', 'right', 1.5, 3, 0, 0, 500, 0);
-
-                // วาดรหัสอ้างอิง
-                drawText(ctx, `รหัสอ้างอิง: ${generateUniqueID()}`, 407, 377.5, 38.5, 'DXSCB', '#76737b', 'center', 1.5, 1, 0, 0, 800, 0);
-
-            } else if (bank === 'พร้อมเพย์ e-Wallet Jaew') {
-                drawImage(ctx, '../assets/image/logo/P-SCB1.png', 486, 573.7, 55, 55);
-                drawText(ctx, `เติมเงินพร้อมเพย์`, 551, 613.0, 44.3, 'DBHelvethaicaMonXMed', '#47424e', 'left', 1.5, 3, 0, 0, 1500, 0);
-                drawText(ctx, `${receiveraccount}`, 769, 662.4, 38.5, 'DXSCB', '#76737b', 'right', 1.5, 1, 0, 0, 500, 0);
-                drawText(ctx, `${receivername} (Jaew)`, 47, 924.5, 35.5, 'DXSCB', '#76737b', 'left', 1.5, 3, 0, 0, 800, 0);
-                ctx.drawImage(bankLogo, bankLogoX, 573.7, bankLogoWidth, 55);
-                // วาดจำนวนเงิน
-                drawText(ctx, `${amount11}`, 769, 791.0, 44.3, 'DBHelvethaicaMonXMed', '#47424e', 'right', 1.5, 3, 0, 0, 500, 0);
-
-                // วาดรหัสอ้างอิง
-                drawText(ctx, `รหัสอ้างอิง: ${generateUniqueID()}`, 407, 377.5, 38.5, 'DXSCB', '#76737b', 'center', 1.5, 1, 0, 0, 800, 0);
-
-            } else if (bank === 'พร้อมเพย์ e-Wallet K Plus W') {
-                drawImage(ctx, '../assets/image/logo/P-SCB1.png', 486, 573.7, 55, 55);
-                drawText(ctx, `เติมเงินพร้อมเพย์`, 551, 613.0, 44.3, 'DBHelvethaicaMonXMed', '#47424e', 'left', 1.5, 3, 0, 0, 1500, 0);
-                drawText(ctx, `${receiveraccount}`, 769, 662.4, 38.5, 'DXSCB', '#76737b', 'right', 1.5, 1, 0, 0, 500, 0);
-                drawText(ctx, `${receivername} (K Plus W)`, 47, 924.5, 35.5, 'DXSCB', '#76737b', 'left', 1.5, 3, 0, 0, 800, 0);
                 ctx.drawImage(bankLogo, bankLogoX, 573.7, bankLogoWidth, 55);
                 // วาดจำนวนเงิน
                 drawText(ctx, `${amount11}`, 769, 791.0, 44.3, 'DBHelvethaicaMonXMed', '#47424e', 'right', 1.5, 3, 0, 0, 500, 0);
