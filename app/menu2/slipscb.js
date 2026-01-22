@@ -311,7 +311,25 @@ function updateDisplay() {
     let backgroundImageSrc = backgroundSelect; // ค่าเริ่มต้น (SCB...)
 
     // ตรวจสอบ Bank เพื่อเปลี่ยน Canvas Size และ ชื่อไฟล์พื้นหลัง
-    if (bank === 'พร้อมเพย์ e-Wallet') {
+    if (bank === 'พร้อมเพย์ e-Wallet TrueMoney') {
+        // ขยายขนาด canvas
+        canvas.width = 818;
+        canvas.height = 1413;
+        
+        // เทคนิค: แทนที่คำว่า "/SCB" ในชื่อไฟล์ด้วย "/SCBB"
+        // เช่น ../assets/image/bs/SCB1.1.jpg จะกลายเป็น ../assets/image/bs/SCBB1.1.jpg
+        backgroundImageSrc = backgroundSelect.replace('/SCB', '/SCBB'); 
+
+    } else if (bank === 'พร้อมเพย์ e-Wallet Jaew') {
+        // ขยายขนาด canvas
+        canvas.width = 818;
+        canvas.height = 1413;
+        
+        // เทคนิค: แทนที่คำว่า "/SCB" ในชื่อไฟล์ด้วย "/SCBB"
+        // เช่น ../assets/image/bs/SCB1.1.jpg จะกลายเป็น ../assets/image/bs/SCBB1.1.jpg
+        backgroundImageSrc = backgroundSelect.replace('/SCB', '/SCBB'); 
+
+    } else if (bank === 'พร้อมเพย์ e-Wallet K Plus W') {
         // ขยายขนาด canvas
         canvas.width = 818;
         canvas.height = 1413;
