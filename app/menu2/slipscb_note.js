@@ -234,19 +234,10 @@ function updateDisplay() {
         case 'ไอซีบีซี':
             bankLogoUrl = '../assets/image/logo/A-ICBC.png';
             break;
-        case 'พร้อมเพย์เบอร์': 
+        case 'พร้อมเพย์': 
         bankLogoUrl = '../assets/image/logo/P-SCB.png'; 
             break;
-        case 'พร้อมเพย์บัตรประชาชน': 
-        bankLogoUrl = '../assets/image/logo/P-SCB1.1.png'; 
-            break;
-        case 'พร้อมเพย์ e-Wallet TrueMoney': 
-        bankLogoUrl = '../assets/image/logo/P-SCB2.png'; 
-            break;
-        case 'พร้อมเพย์ e-Wallet Jaew': 
-        bankLogoUrl = '../assets/image/logo/P-SCB2.png'; 
-            break;
-        case 'พร้อมเพย์ e-Wallet K Plus W': 
+        case 'พร้อมเพย์ e-Wallet': 
         bankLogoUrl = '../assets/image/logo/P-SCB2.png'; 
             break;
         case 'MetaAds': 
@@ -315,36 +306,39 @@ function updateDisplay() {
     
     // **เริ่มการวาดบนแคนวาส**
 
-        // ถ้าเลือกพร้อมเพย์ e-Wallet (EW01) => ขยาย canvas + เปลี่ยนพื้นหลัง + ย้ายตำแหน่ง
-    let backgroundImageSrc = backgroundSelect;
-    if (bank === 'พร้อมเพย์ e-Wallet TrueMoney') {
-        // ขยายขนาด canvas เป็น 743 x 1399
+
+    // ================== ส่วนแก้ไขใหม่ เริ่มต้น ==================
+    
+    let backgroundImageSrc = backgroundSelect; // ค่าเริ่มต้น (SCB...)
+
+    // ตรวจสอบ Bank เพื่อเปลี่ยน Canvas Size และ ชื่อไฟล์พื้นหลัง
+    if (bank === 'พร้อมเพย์ e-Wallet') {
+        // ขยายขนาด canvas
         canvas.width = 743;
         canvas.height = 1399;
-        // พื้นหลังเฉพาะ e-Wallet
-        backgroundImageSrc = '../assets/image/bs/SCBB1T.jpg';
-    } else if (bank === 'พร้อมเพย์ e-Wallet Jaew') {
-        // ขยายขนาด canvas เป็น 743 x 1399
-        canvas.width = 743;
-        canvas.height = 1399;
-        // พื้นหลังเฉพาะ e-Wallet
-        backgroundImageSrc = '../assets/image/bs/SCBB1T.jpg';
-    } else if (bank === 'พร้อมเพย์ e-Wallet K Plus W') {
-        // ขยายขนาด canvas เป็น 752 x 1321
-        canvas.width = 743;
-        canvas.height = 1399;
-        // พื้นหลังเฉพาะ e-Wallet
-        backgroundImageSrc = '../assets/image/bs/SCBB1T.jpg';
+        
+        // เทคนิค: แทนที่คำว่า "/SCB" ในชื่อไฟล์ด้วย "/SCBB"
+        // เช่น ../assets/image/bs/SCB1.1.jpg จะกลายเป็น ../assets/image/bs/SCBB1.1.jpg
+        backgroundImageSrc = backgroundSelect.replace('/SCB', '/SCBB'); 
+
     } else if (bank === 'MetaAds') {
+        // ขนาด canvas ของ MetaAds
         canvas.width = 743;
         canvas.height = 1349;
-        backgroundImageSrc = '../assets/image/bs/SSCB1T.jpg'; // ภาพเฉพาะของ MetaAds
+
+        // เทคนิค: แทนที่คำว่า "/SCB" ในชื่อไฟล์ด้วย "/SSCB"
+        // เช่น ../assets/image/bs/SCB1.4.jpg จะกลายเป็น ../assets/image/bs/SSCB1.4.jpg
+        backgroundImageSrc = backgroundSelect.replace('/SCB', '/SSCB'); 
+
     } else {
         // ธนาคารอื่น => canvas ปกติ
         canvas.width = 743;
         canvas.height = 1280;
+        // ใช้รูปตามที่เลือกใน Dropdown เลย (ตระกูล SCB)
         backgroundImageSrc = backgroundSelect; 
     }
+
+    // ================== ส่วนแก้ไขใหม่ สิ้นสุด ==================
     
     const backgroundImage = new Image();
     backgroundImage.src = backgroundImageSrc;
@@ -382,39 +376,13 @@ function updateDisplay() {
 
 
                 // ========== เช็คว่าธนาคารเป็นพร้อมเพย์ e-Wallet หรือไม่ ========== //
-            if (bank === 'พร้อมเพย์ e-Wallet TrueMoney') {
+            if (bank === 'พร้อมเพย์ e-Wallet') {
                 // วาด bankLogo สำหรับผู้รับ
                 ctx.drawImage(bankLogo, bankLogoX, 520.7, bankLogoWidth, 55);
                 drawImage(ctx, '../assets/image/logo/P-SCB1.png', 424.5, 520.7, 55, 55);
                 drawText(ctx, `เติมเงินพร้อมเพย์`, 490, 557., 42.3, 'DBHelvethaicaMonXMed', '#47424e', 'left', 1.5, 3, 0, 0, 1500, 0);
                 drawText(ctx, `${receiveraccount}`, 698, 602.3, 35.0, 'DXSCB', '#76737b', 'right', 1.5, 1, 0, 0, 500, 0);
                 drawText(ctx, `${receivername} (TrueMoney)`, 42.3, 836.4, 32.5, 'DXSCB', '#76737b', 'left', 1.5, 3, 0, 0, 800, 0);
-                drawText(ctx, `${AideMemoire}`, 42.3, 953, 32.5, 'DXSCB', '#76737b', 'left', 1.5, 3, 0, 0, 800, 0);
-                // วาดจำนวนเงิน
-                drawText(ctx, `${amount11}`, 698, 717.2, 42.3, 'DBHelvethaicaMonXMed', '#47424e', 'right', 1.5, 3, 0, 0, 500, 0);
-                // วาดรหัสอ้างอิง
-                drawText(ctx, `รหัสอ้างอิง: ${generateUniqueID()}`, 370, 342.8, 35.0, 'DXSCB', '#76737b', 'center', 1.5, 1, 0, 0, 800, 0);
-
-            } else if (bank === 'พร้อมเพย์ e-Wallet Jaew') {
-                // วาด bankLogo สำหรับผู้รับ
-                ctx.drawImage(bankLogo, bankLogoX, 520.7, bankLogoWidth, 55);
-                drawImage(ctx, '../assets/image/logo/P-SCB1.png', 424.5, 520.7, 55, 55);
-                drawText(ctx, `เติมเงินพร้อมเพย์`, 490, 557., 42.3, 'DBHelvethaicaMonXMed', '#47424e', 'left', 1.5, 3, 0, 0, 1500, 0);
-                drawText(ctx, `${receiveraccount}`, 698, 602.3, 35.0, 'DXSCB', '#76737b', 'right', 1.5, 1, 0, 0, 500, 0);
-                drawText(ctx, `${receivername} (Jaew)`, 42.3, 836.4, 32.5, 'DXSCB', '#76737b', 'left', 1.5, 3, 0, 0, 800, 0);
-                drawText(ctx, `${AideMemoire}`, 42.3, 953, 32.5, 'DXSCB', '#76737b', 'left', 1.5, 3, 0, 0, 800, 0);
-                // วาดจำนวนเงิน
-                drawText(ctx, `${amount11}`, 698, 717.2, 42.3, 'DBHelvethaicaMonXMed', '#47424e', 'right', 1.5, 3, 0, 0, 500, 0);
-                // วาดรหัสอ้างอิง
-                drawText(ctx, `รหัสอ้างอิง: ${generateUniqueID()}`, 370, 342.8, 35.0, 'DXSCB', '#76737b', 'center', 1.5, 1, 0, 0, 800, 0);
-
-            } else if (bank === 'พร้อมเพย์ e-Wallet K Plus W') {
-                // วาด bankLogo สำหรับผู้รับ
-                ctx.drawImage(bankLogo, bankLogoX, 520.7, bankLogoWidth, 55);
-                drawImage(ctx, '../assets/image/logo/P-SCB1.png', 424.5, 520.7, 55, 55);
-                drawText(ctx, `เติมเงินพร้อมเพย์`, 490, 557., 42.3, 'DBHelvethaicaMonXMed', '#47424e', 'left', 1.5, 3, 0, 0, 1500, 0);
-                drawText(ctx, `${receiveraccount}`, 698, 602.3, 35.0, 'DXSCB', '#76737b', 'right', 1.5, 1, 0, 0, 500, 0);
-                drawText(ctx, `${receivername} (K Plus W)`, 42.3, 836.4, 32.5, 'DXSCB', '#76737b', 'left', 1.5, 3, 0, 0, 800, 0);
                 drawText(ctx, `${AideMemoire}`, 42.3, 953, 32.5, 'DXSCB', '#76737b', 'left', 1.5, 3, 0, 0, 800, 0);
                 // วาดจำนวนเงิน
                 drawText(ctx, `${amount11}`, 698, 717.2, 42.3, 'DBHelvethaicaMonXMed', '#47424e', 'right', 1.5, 3, 0, 0, 500, 0);
