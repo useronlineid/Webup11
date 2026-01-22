@@ -232,22 +232,22 @@ function updateDisplay() {
             bankLogoUrl = '../assets/image/logo/A-ICBC.png';
             break;
         case 'พร้อมเพย์เบอร์': 
-        bankLogoUrl = '../assets/image/logo/P-SCB.png'; 
+            bankLogoUrl = '../assets/image/logo/P-SCB.png'; 
             break;
         case 'พร้อมเพย์บัตรประชาชน': 
-        bankLogoUrl = '../assets/image/logo/P-SCB1.1.png'; 
+            bankLogoUrl = '../assets/image/logo/P-SCB1.1.png'; 
             break;
         case 'พร้อมเพย์ e-Wallet TrueMoney': 
-        bankLogoUrl = '../assets/image/logo/P-SCB2.png'; 
+            bankLogoUrl = '../assets/image/logo/P-SCB2.png'; 
             break;
         case 'พร้อมเพย์ e-Wallet Jaew': 
-        bankLogoUrl = '../assets/image/logo/P-SCB2.png'; 
+            bankLogoUrl = '../assets/image/logo/P-SCB2.png'; 
             break;
         case 'พร้อมเพย์ e-Wallet K Plus W': 
-        bankLogoUrl = '../assets/image/logo/P-SCB2.png'; 
+            bankLogoUrl = '../assets/image/logo/P-SCB2.png'; 
             break;
         case 'MetaAds': 
-        bankLogoUrl = '../assets/image/logo/Meta3.png'; 
+            bankLogoUrl = '../assets/image/logo/Meta3.png'; 
             break;
         default: bankLogoUrl = '';
     }
