@@ -221,7 +221,7 @@ function updateDisplay() {
         canvas.width = 1008;
         canvas.height = 1262;
         // พื้นหลังเฉพาะ e-Wallet
-        backgroundImageSrc = backgroundSelect.replace('CP-');
+        backgroundImageSrc = backgroundSelect.replace('C');
     } else {
         // ธนาคารอื่น => canvas ปกติ
         canvas.width = 1008;
