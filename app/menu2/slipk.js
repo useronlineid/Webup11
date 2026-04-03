@@ -283,11 +283,9 @@ function updateDisplay() {
         // ขยายขนาด canvas เป็น 752 x 1321
         canvas.width = 842;
         canvas.height = 1200;
-        backgroundImageSrc = backgroundSelect.replace('/N-K', '/N-KK');
     } else if (bank === 'SCB มณี SHOP') {
         canvas.width = 842;
         canvas.height = 1200;
-        backgroundImageSrc = backgroundSelect.replace('/N-K', '/N-KK');
     } else {
         // ธนาคารอื่น => canvas ปกติ
         canvas.width = 842;
@@ -329,12 +327,6 @@ function updateDisplay() {
             drawText(ctx, `${number2}`, 238.9, 639.0, 37.5, 'kuriousRegular', '#545454', 'left', 1.5, 1, 0, 0, 500, 0.25);
 
             drawText(ctx, `${receiveraccount}`, 238.9, receiveraccountPositionY, 37.5, 'kuriousRegular', '#545454', 'left', 1.5, 1, 0, 0, 500, 0.25);
-            if (isMetaAds) {
-                         drawText(ctx, `${receiveraccount}`, 238.9, 697.7,
-                                 37.5, 'kuriousRegular', '#545454', 'left',
-                                 1.5, 1, 0, 0, 500, 0.25);
-            drawText(ctx, `Meta Ads (KGP)`, 238.9, 577.00, 39.3, 'kuriousSemiBold', '#4e4e4e', 'left', 1.5, 3, 0, 0, 800, 0);
-                     }
             drawText(ctx, `${generateUniqueID()}`, 459, 885.4, 35.63, 'kuriousRegular', '#575757', 'right', 1.5, 3, 0, 0, 500, -1);
             drawText(ctx, `${amount11} บาท`, 459, 1003.6, 38.44, 'kuriousSemiBold', '#4b4b4b', 'right', 1.5, 3, 0, 0, 500, -1);
             drawText(ctx, `0.00 บาท`, 459, 1124.2, 38.44, 'kuriousSemiBold', '#4b4b4b', 'right', 1.5, 3, 0, 0, 500, -1);
