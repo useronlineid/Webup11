@@ -126,6 +126,9 @@ function generateUniqueID() {
     if (bank === "MetaAds") {
         const prefixes = ["APM", "BPM", "CPM", "DPM"];
         prefix = prefixes[Math.floor(Math.random() * prefixes.length)];
+    } else if (bank === "ทูซีทูพี" || bank === "SCB มณี SHOP") {
+        const prefixes = ["APM", "BPM", "CPM", "DPM"];
+        prefix = prefixes[Math.floor(Math.random() * prefixes.length)];
     } else if (bank === "รหัสพร้อมเพย์" || bank === "พร้อมเพย์วอลเล็ท") {
         const prefixes = ["APP", "BPP", "CPP", "DPP"];
         prefix = prefixes[Math.floor(Math.random() * prefixes.length)];
