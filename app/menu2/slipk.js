@@ -283,9 +283,11 @@ function updateDisplay() {
         // ขยายขนาด canvas เป็น 752 x 1321
         canvas.width = 842;
         canvas.height = 1200;
+        backgroundImageSrc = backgroundSelect;
     } else if (bank === 'SCB มณี SHOP') {
         canvas.width = 842;
         canvas.height = 1200;
+        backgroundImageSrc = backgroundSelect;
     } else {
         // ธนาคารอื่น => canvas ปกติ
         canvas.width = 842;
