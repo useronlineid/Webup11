@@ -374,7 +374,7 @@ function updateDisplay() {
             drawText(ctx, `${QRCode}`, 238.9, 599.0, 33, 'kuriousSemiBold', '#4e4e4e', 'left', 1.5, 5, 0, 0, 500, 0);
             drawImage(ctx, '../assets/image/logo/KBANK.png', 34.6, 222, 157, 157);  
 
-            } 
+            }
         
             // Draw the selected image
             if (selectedImage) {
