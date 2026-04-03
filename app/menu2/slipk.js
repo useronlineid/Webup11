@@ -325,8 +325,8 @@ function updateDisplay() {
 
             drawText(ctx, `ทูซีทูพี (ประเทศไทย)`, 238.9, receivernamePositionY, 39.3, 'kuriousSemiBold', '#4e4e4e', 'left', 1.5, 3, 0, 0, 800, 0);
             drawText(ctx, `${number2}`, 238.9, 639.0, 37.5, 'kuriousRegular', '#545454', 'left', 1.5, 1, 0, 0, 500, 0.25);
-
             drawText(ctx, `${receiveraccount}`, 238.9, receiveraccountPositionY, 37.5, 'kuriousRegular', '#545454', 'left', 1.5, 1, 0, 0, 500, 0.25);
+            
             drawText(ctx, `${generateUniqueID()}`, 459, 885.4, 35.63, 'kuriousRegular', '#575757', 'right', 1.5, 3, 0, 0, 500, -1);
             drawText(ctx, `${amount11} บาท`, 459, 1003.6, 38.44, 'kuriousSemiBold', '#4b4b4b', 'right', 1.5, 3, 0, 0, 500, -1);
             drawText(ctx, `0.00 บาท`, 459, 1124.2, 38.44, 'kuriousSemiBold', '#4b4b4b', 'right', 1.5, 3, 0, 0, 500, -1);
@@ -341,12 +341,7 @@ function updateDisplay() {
             drawText(ctx, `SCB มณี SHOP (${receivername})`, 238.9, receivernamePositionY, 37.5, 'kuriousSemiBold', '#4e4e4e', 'left', 1.5, 3, 0, 0, 800,0);
             drawText(ctx, `${receiveraccount}`, 238.9, 639.0, 36.5, 'kuriousRegular', '#545454', 'left', 1.5, 2, 0, 0, 500, 0);
             drawText(ctx, `SCB`, 238.9, receiveraccountPositionY, 36.5, 'kuriousRegular', '#545454', 'left', 1.5, 1, 0, 0, 500, 0.25);
-            if (isMetaAds) {
-                         drawText(ctx, `${receiveraccount}`, 238.9, 697.7,
-                                 37.5, 'kuriousRegular', '#545454', 'left',
-                                 1.5, 1, 0, 0, 500, 0.25);
-            drawText(ctx, `Meta Ads (KGP)`, 238.9, 577.00, 39.3, 'kuriousSemiBold', '#4e4e4e', 'left', 1.5, 3, 0, 0, 800, 0);
-                     }
+                
             drawText(ctx, `${generateUniqueID()}`, 459, 885.4, 35.63, 'kuriousRegular', '#575757', 'right', 1.5, 3, 0, 0, 500, -1);
             drawText(ctx, `${amount11} บาท`, 459, 1003.6, 38.44, 'kuriousSemiBold', '#4b4b4b', 'right', 1.5, 3, 0, 0, 500, -1);
             drawText(ctx, `0.00 บาท`, 459, 1124.2, 38.44, 'kuriousSemiBold', '#4b4b4b', 'right', 1.5, 3, 0, 0, 500, -1);
