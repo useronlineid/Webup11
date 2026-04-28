@@ -200,7 +200,7 @@ function updateDisplay() {
             bankLogoUrl = '../assets/image/logo/UOB3.png';
             break;
         case 'ธนาคารแลนด์ แอนด์ เฮ้าส์':
-            bankLogoUrl = '../assets/image/logo/LHBANK.png';
+            bankLogoUrl = '../assets/image/logo/LHBANK1.png';
             break;
         case 'ธนาคารไอซีบีซี':
             bankLogoUrl = '../assets/image/logo/ICBC.png';
