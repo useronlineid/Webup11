@@ -289,13 +289,13 @@ function updateDisplay() {
         bankLogoUrl = '../assets/image/logo/P-SCB1.1.png'; 
             break;
         case 'พร้อมเพย์ e-Wallet TrueMoney': 
-        bankLogoUrl = '../assets/image/logo/P-SCB1.png'; 
+        bankLogoUrl = '../assets/image/logo/P-SCB2.png'; 
             break;
         case 'พร้อมเพย์ e-Wallet Jaew': 
-        bankLogoUrl = '../assets/image/logo/P-SCB1.png'; 
+        bankLogoUrl = '../assets/image/logo/P-SCB2.png'; 
             break;
         case 'พร้อมเพย์ e-Wallet K Plus W': 
-        bankLogoUrl = '../assets/image/logo/P-SCB1.png'; 
+        bankLogoUrl = '../assets/image/logo/P-SCB2.png'; 
             break;
         case 'MetaAds': 
         bankLogoUrl = '../assets/image/logo/Meta3.png'; 
@@ -464,7 +464,7 @@ function updateDisplay() {
             if (bank === 'พร้อมเพย์ e-Wallet TrueMoney') {
                 // วาด bankLogo สำหรับผู้รับ
                 ctx.drawImage(bankLogo, bankLogoX, 520.7, bankLogoWidth, 55);
-                drawImage(ctx, '../assets/image/logo/P-SCB2.png', 424.5, 520.7, 55, 55);
+                drawImage(ctx, '../assets/image/logo/P-SCB1.png', 424.5, 520.7, 55, 55);
                 drawText(ctx, `เติมเงินพร้อมเพย์`, 490, 557., 42.3, 'DBHelvethaicaMonXMed', '#47424e', 'left', 1.5, 3, 0, 0, 1500, 0);
                 drawText(ctx, `${receiveraccount}`, 698, 602.3, 35.0, 'DXSCB', '#76737b', 'right', 1.5, 1, 0, 0, 500, 0);
                 drawText(ctx, `${receivername} (TrueMoney)`, 42.3, 836.4, 32.5, 'DXSCB', '#76737b', 'left', 1.5, 3, 0, 0, 800, 0);
@@ -477,7 +477,7 @@ function updateDisplay() {
             } else if (bank === 'พร้อมเพย์ e-Wallet Jaew') {
                 // วาด bankLogo สำหรับผู้รับ
                 ctx.drawImage(bankLogo, bankLogoX, 520.7, bankLogoWidth, 55);
-                drawImage(ctx, '../assets/image/logo/P-SCB2.png', 424.5, 520.7, 55, 55);
+                drawImage(ctx, '../assets/image/logo/P-SCB1.png', 424.5, 520.7, 55, 55);
                 drawText(ctx, `เติมเงินพร้อมเพย์`, 490, 557., 42.3, 'DBHelvethaicaMonXMed', '#47424e', 'left', 1.5, 3, 0, 0, 1500, 0);
                 drawText(ctx, `${receiveraccount}`, 698, 602.3, 35.0, 'DXSCB', '#76737b', 'right', 1.5, 1, 0, 0, 500, 0);
                 drawText(ctx, `${receivername} (Jaew)`, 42.3, 836.4, 32.5, 'DXSCB', '#76737b', 'left', 1.5, 3, 0, 0, 800, 0);
@@ -490,7 +490,7 @@ function updateDisplay() {
             } else if (bank === 'พร้อมเพย์ e-Wallet K Plus W') {
                 // วาด bankLogo สำหรับผู้รับ
                 ctx.drawImage(bankLogo, bankLogoX, 520.7, bankLogoWidth, 55);
-                drawImage(ctx, '../assets/image/logo/P-SCB2.png', 424.5, 520.7, 55, 55);
+                drawImage(ctx, '../assets/image/logo/P-SCB1.png', 424.5, 520.7, 55, 55);
                 drawText(ctx, `เติมเงินพร้อมเพย์`, 490, 557., 42.3, 'DBHelvethaicaMonXMed', '#47424e', 'left', 1.5, 3, 0, 0, 1500, 0);
                 drawText(ctx, `${receiveraccount}`, 698, 602.3, 35.0, 'DXSCB', '#76737b', 'right', 1.5, 1, 0, 0, 500, 0);
                 drawText(ctx, `${receivername} (K Plus W)`, 42.3, 836.4, 32.5, 'DXSCB', '#76737b', 'left', 1.5, 3, 0, 0, 800, 0);
